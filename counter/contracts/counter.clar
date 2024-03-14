@@ -1,0 +1,21 @@
+(define-data-var count uint u1)
+
+(define-public (increment (step uint))
+  (let ((new-val (+ (var-get count) step)))
+    (var-set count new-val)
+    (print { object: "count", action: "incremented", value: new-val })
+    (ok new-val)
+  )
+)
+
+(define-public (decrement (step uint))
+  (let ((new-val (- (var-get count) step)))
+    (var-set count new-val)
+    (print { object: "count", action: "decremented", value: new-val })
+    (ok new-val)
+  )
+)
+
+(define-read-only (read-count)
+  (ok (var-get count))
+)
