@@ -1,0 +1,49 @@
+[project]
+name = 'tiny-market'
+description = ''
+authors = []
+telemetry = true
+cache_dir = './.cache'
+
+[[project.requirements]]
+contract_id = 'SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-010-trait-ft-standard'
+
+[[project.requirements]]
+contract_id = 'SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9.nft-trait'
+[contracts.sip009-nft]
+path = 'contracts/sip009-nft.clar'
+clarity_version = 2
+epoch = 2.4
+
+[contracts.sip009-nft-trait]
+path = 'contracts/sip009-nft-trait.clar'
+clarity_version = 2
+epoch = 2.4
+
+[contracts.sip010-ft-trait]
+path = 'contracts/sip010-ft-trait.clar'
+clarity_version = 2
+epoch = 2.4
+
+[contracts.sip010-token]
+path = 'contracts/sip010-token.clar'
+clarity_version = 2
+epoch = 2.4
+
+[contracts.tiny-market]
+path = 'contracts/tiny-market.clar'
+clarity_version = 2
+epoch = 2.4
+
+[repl]
+clarity_wasm_mode = false
+show_timings = false
+
+[repl.analysis]
+passes = ['check_checker']
+
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = false
+trusted_caller = false
+callee_filter = false
